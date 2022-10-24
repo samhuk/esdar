@@ -5,8 +5,6 @@ import { printBuildResult } from './builder'
 import { parseClientOptions } from './options'
 import { ClientOptions, CustomBuildResult } from './types'
 
-const DIRS = ['./src/client', './src/common']
-
 const startRebuildWatch = (options: ClientOptions, buildResult: CustomBuildResult) => {
   const buildVerbosity = 0 // TODO
   watch(() => {
@@ -38,7 +36,7 @@ export const watchClient = (options: ClientOptions) => {
     .catch(() => {
       if (initialBuildWatcher != null)
         return
-      initialBuildWatcher = chokidar.watch(DIRS)
+      initialBuildWatcher = chokidar.watch(_options.watchedDirectoryPaths)
 
       initialBuildWatcher.on('ready', () => {
         console.log('Watching for changes...')
