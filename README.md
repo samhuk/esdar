@@ -14,15 +14,54 @@
 
 ## Overview
 
-This is a WIP package for wrapping [esbuild](https://github.com/evanw/esbuild) and [chokidar](https://github.com/paulmillr/chokidar) to create easier typescript server+client hot-reloading builds.
+This is a work-in-progress package that wraps [esbuild](https://github.com/evanw/esbuild) and [chokidar](https://github.com/paulmillr/chokidar) to  achieve hot-reloading server+client building functionality. At the moment, esdar is primarily used for packages like [tree-starter](https://github.com/samhuk/tree-starter) to extract out this functionality, however in the future it could be adapted to suit more general use cases if desired.
+
+To see a real-world use case of esdar, check out [tree-starter](https://github.com/samhuk/tree-starter).
 
 ## Usage Overview
 
-> Briefly show what using your package looks like. Try to omit as much configuration as possible as your package wiki can detail that.
+```typescript
+import {
+  buildClient as buildClientEsdar,
+  buildServer as buildServerEsdar,
+  watchClient as watchClientEsdar,
+  watchServer as watchServerEsdar,
+  ClientOptions,
+  ServerOptions,
+} from 'esdar'
+
+const clientOptions: ClientOptions = {
+  prod: process.env.NODE_ENV === 'production',
+  entrypointFilePath: './src/client/main.tsx',
+  faviconFilePath: './src/client/favicon.ico',
+  indexHtmlFilePath: './src/client/index.html',
+  outputDirPath: './build/client',
+  outputJsFileName: 'out.js',
+  watchedDirectoryPaths: ['./src/client', './src/common'],
+}
+
+const serverOptions: ServerOptions = {
+  prod: process.env.NODE_ENV === 'production',
+  entrypointFilePath: './src/server/index.ts',
+  outputDirPath: './build/server',
+  outputJsFileName: 'out.js',
+  watchedDirectoryPaths: ['./src/server', './src/common'],
+  debugPort: 5003,
+  external: ['livereload-js', 'pg-native'],
+}
+
+export const buildClient = () => buildClientEsdar(clientOptions)
+
+export const buildServer = () => buildServerEsdar(serverOptions)
+
+export const watchClient = () => watchClientEsdar(clientOptions)
+
+export const watchServer = () => watchServerEsdar(serverOptions)
+```
 
 ## Examples
 
-> Mention where any usage examples are, either within the repository or externally hosted.
+Used by [tree-starter](https://github.com/samhuk/tree-starter).
 
 ## Development
 
