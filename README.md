@@ -3,8 +3,6 @@
   <em>esbuild chokidar wrapper</em>
 </p>
 
-> Badges like license type, current build status, and npm package version info can go here. Uncomment the HTML below within this README to show them.
-
 <p align="center">
   <a href="https://img.shields.io/badge/License-MIT-green.svg" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="license" />
@@ -16,9 +14,7 @@
 
 ## Overview
 
-> Provide a quick overview of what your package does.
-
-> If it is a large package, put a "Getting Started" wiki page link here.
+This is a WIP package for wrapping [esbuild](https://github.com/evanw/esbuild) and [chokidar](https://github.com/paulmillr/chokidar) to create easier typescript server+client hot-reloading builds.
 
 ## Usage Overview
 
