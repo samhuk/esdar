@@ -10,7 +10,7 @@ You can install Node.js [here](https://nodejs.org/en/), or if you are using Choc
 
 It runs on MacOS, Windows, and Linux environments.
 
-It runs on many versions of Node.js, tested back to version 12.x.
+It runs on many versions of Node.js, tested back to version 14.x.
 
 ## Linting
 
@@ -30,16 +30,6 @@ Jest is used for unit testing. To build and run the unit tests, run `npm run uni
 
 The unit tests can be debugged with Visual Studio Code by running the **Run Unit Tests** debug task.
 
-### Integration Tests
-
-Integration tests connect to a real PostgreSQL server and use ts-pg-orm as a user would.
-
-The database connectivity configuration is at `.env-cmdrc.json`.
-
-To run the integration tests, run `npm run integration-tests`.
-
-The integration tests can be debugged with Visual Studio Code by running the **Run Integration Tests** debug task.
-
 ## Miscellaneous Scripts
 
 `npm run check` - Useful to run before committing to check the full validity of a change. This runs linting, Typescript build, unit tests and integration tests.
@@ -51,7 +41,6 @@ Pull requests automatically run a CI pipeline that checks various criteria:
 * Linting
 * Typescript build
 * Unit tests
-* Integration tests
 
 These must pass for a pull request to be approved and merged.
 

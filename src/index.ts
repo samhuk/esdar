@@ -2,8 +2,11 @@
  * This file defines the public API of the package. Everything here will be available from
  * the top-level package name when importing as an npm package.
  *
- * E.g. `import { createPackageName, PackageNameOptions } from 'npm-package-name`
+ * E.g. `import { createEsdar, Esdar } from 'esdar`
  */
 
-export { createPackageName } from './package-name'
+export { buildClient } from './esdar/buildClient'
+export { buildServer } from './esdar/buildServer'
+export { watchClient } from './esdar/watchClient'
+export { watchServer } from './esdar/watchServer'
 export * from './types'
