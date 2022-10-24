@@ -14,9 +14,9 @@
 
 ## Overview
 
-This is a work-in-progress package that wraps [esbuild](https://github.com/evanw/esbuild) and [chokidar](https://github.com/paulmillr/chokidar) to  achieve hot-reloading server+client building functionality. At the moment, esdar is primarily used for packages like [tree-starter](https://github.com/samhuk/tree-starter) to extract out this functionality, however in the future it could be adapted to suit more general use cases if desired.
+This is a work-in-progress package that wraps [esbuild](https://github.com/evanw/esbuild) and [chokidar](https://github.com/paulmillr/chokidar) to  achieve hot-reloading server+client building functionality. At the moment, esdar is primarily used for packages like [web-app-template](https://github.com/samhuk/web-app-template) to extract out this functionality, however in the future it could be adapted to suit more general use cases if desired.
 
-To see a real-world use case of esdar, check out [tree-starter](https://github.com/samhuk/tree-starter).
+To see a real-world use case of esdar, check out [web-app-template](https://github.com/samhuk/web-app-template).
 
 ## Usage Overview
 
@@ -61,7 +61,7 @@ export const watchServer = () => watchServerEsdar(serverOptions)
 
 ## Examples
 
-Used by [tree-starter](https://github.com/samhuk/tree-starter).
+Used by [web-app-template](https://github.com/samhuk/web-app-template).
 
 ## Development
 
