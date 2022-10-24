@@ -37,12 +37,6 @@ export const watchClient = (options: ClientOptions) => {
       if (initialBuildWatcher != null)
         return
       initialBuildWatcher = chokidar.watch(_options.watchedDirectoryPaths)
-
-      initialBuildWatcher.on('ready', () => {
-        console.log('Watching for changes...')
-        initialBuildWatcher.on('all', () => {
-          watch(() => watchClient(_options), initialBuildWatcher, 500, () => console.log('Watching for changes...'))
-        })
-      })
+      watch(() => watchClient(_options), initialBuildWatcher, 500, () => console.log('Watching for changes...'))
     })
 }
