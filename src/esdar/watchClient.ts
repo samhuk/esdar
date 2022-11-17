@@ -20,7 +20,7 @@ const startRebuildWatch = (options: ClientOptions, buildResult: CustomBuildResul
         }
       })
       .catch(() => undefined) // Prevent from exiting the process
-  }, options.watchedDirectoryPaths, 500, () => console.log('Watching for changes...'))
+  }, options.watchedDirectoryPaths, 150, () => console.log('Watching for changes...'))
 }
 
 let initialBuildWatcher: chokidar.FSWatcher = null
@@ -37,6 +37,6 @@ export const watchClient = (options: ClientOptions) => {
       if (initialBuildWatcher != null)
         return
       initialBuildWatcher = chokidar.watch(_options.watchedDirectoryPaths)
-      watch(() => watchClient(_options), initialBuildWatcher, 500, () => console.log('Watching for changes...'))
+      watch(() => watchClient(_options), initialBuildWatcher, 150, () => console.log('Watching for changes...'))
     })
 }
